@@ -1,0 +1,5 @@
+{
+	"createLedgerValidations": {
+		"Select l.name from Ledger l where l.name = '$.name'": "?1"
+	}
+}
