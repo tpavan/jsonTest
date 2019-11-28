@@ -1,0 +1,32 @@
+/*
+ * Copyright 2015, Optimal Payments PLC, 2 Place Alexis Nihon, suite 700, Westmount, Quebec, Canada
+ * All rights reserved.
+ * 
+ * This software is the confidential and proprietary information of Optimal Payments PLC
+ * ("Confidential Information"). You shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement you entered into with Optimal
+ * Payments.
+ */
+
+package com.paysafe.ss.ledger.component.commons;
+
+import org.springframework.stereotype.Component;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+@Component
+public class DbQueries {
+
+  private EntityManager entityManager;
+
+  public DbQueries(EntityManager entityManager) {
+    this.entityManager = entityManager;
+  }
+
+  public Object executeSelectQuery(String query) {
+    Query emQuery = entityManager.createQuery(query);
+    return emQuery.getSingleResult();
+  }
+
+}
