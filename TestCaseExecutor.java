@@ -1,20 +1,3 @@
-/*
- * Copyright 2015, Optimal Payments PLC, 2 Place Alexis Nihon, suite 700, Westmount, Quebec, Canada
- * All rights reserved.
- * 
- * This software is the confidential and proprietary information of Optimal Payments PLC
- * ("Confidential Information"). You shall not disclose such Confidential Information and shall use
- * it only in accordance with the terms of the license agreement you entered into with Optimal
- * Payments.
- */
-
-package com.paysafe.ss.ledger.component.commons;
-
-import com.paysafe.op.commons.test.verify.VerifyUtil;
-import com.paysafe.op.errorhandling.exceptions.InternalErrorException;
-import com.paysafe.ss.ledger.component.dto.TestCaseDto;
-import com.paysafe.ss.ledger.component.dto.TestCaseDto.VerifyDto;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.jayway.jsonpath.JsonPath;
