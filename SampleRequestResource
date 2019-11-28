@@ -1,0 +1,11 @@
+{
+  "transactionId": "{{generateUuid}",
+  "type": "PAYMENT",
+  "status": "COMPLETED",
+  "paymentType": null,
+  "origin": {
+    "site": "NETBANX",
+    "service": "CARD"
+  },
+  "settlementBankId": "settlementBankId"
+}
