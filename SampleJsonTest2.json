@@ -1,0 +1,20 @@
+[
+		{
+			"url" : "/ledger/v1/ledgers",
+			"testName": "postCreateLedger_WhenInputIsValid_ShouldReturn200",
+			"method": "POST",
+			"request": {
+				"requestResource": "ledgerRequest.json"
+			},
+			"verify": {
+				"httpStatus": 200,
+				"responseResourceType": "ledgerResponseResource",
+				"assertions": {
+					"$.name": "test_ledger"
+				},
+				"dbAssertions" : {
+				   "createLedgerValidations" : ["test_ledger"]
+				}
+			}
+		}
+]
