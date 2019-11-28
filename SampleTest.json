@@ -1,0 +1,47 @@
+[
+		{
+			"url" : "/backofficeprocessor/v1/transactions/",
+			"testName": "post_payment_transaction_with_valid_identifier_response_200",
+			"method": "POST",
+			"prerequisite": [
+				"createPaymentAccount.json","updatePaymentAccount.json","createSettlementRules.json"
+			],
+			"request": {
+				"requestResource": "transactionRequest.json",
+				"requestModificationBody": {
+					"$.status": "CANCELLED",
+					"$.origin.service": "DIRECT_DEBIT"
+				}
+			},
+			"verify": {
+				"httpStatus": 200,
+				"responseResourceType": "transactionResponse",
+				"assertions": {
+					"$.status": "CANCELLED",
+					"$.origin.service": "DIRECT_DEBIT"
+				}
+			}
+		},
+		{
+			"url" : "/backofficeprocessor/v1/transactions/",
+			"testName": "post_settlement_transaction_with_valid_identifier_response_200",
+			"method": "POST",
+			"prerequisite": [
+				"createPaymentAccount.json","updatePaymentAccount.json","createSettlementRules.json"
+			],
+			"request": {
+				"requestResource": "transactionRequest.json",
+				"requestModificationBody": {
+					"$.status": "COMPLETED",
+					"$.type" : "SETTLEMENT"
+				}
+			},
+			"verify": {
+				"httpStatus": 200,
+				"responseResourceType": "transactionResponse",
+				"assertions": {
+					"$.status": "COMPLETED"
+				}
+			}
+		}
+]
